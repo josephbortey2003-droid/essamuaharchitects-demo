@@ -107,7 +107,9 @@ section { padding-block: 90px; }
 .quote-strip .mono { color: var(--mute); flex: none; }
 
 /* plates */
-.plates { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
+.plates { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 16px; }
+.plates > .plate { min-width: 0; }
+.plate .im img { min-width: 0; }
 .plate { margin: 0; background: var(--white); border: 1px solid var(--ink); padding: 8px 8px 0; display: flex; flex-direction: column; }
 .plate img { width: 100%; height: 100%; object-fit: cover; }
 .plate .im { overflow: hidden; flex: 1 1 auto; min-height: 0; }
@@ -195,7 +197,7 @@ footer .mono { color: var(--mute); }
   .sh { grid-template-columns: 1fr; gap: 6px; }
   .principles { grid-template-columns: 1fr; }
   .pr { border-right: 0; border-bottom: 1px solid var(--line); } .pr:last-child { border-bottom: 0; }
-  .plates { grid-template-columns: 1fr 1fr; }
+  .plates { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .plates .plate { grid-column: span 1; } .plates .p-a, .plates .p-g { grid-column: span 2; }
   .plate .im { aspect-ratio: 4 / 3 !important; }
 }
@@ -206,7 +208,7 @@ footer .mono { color: var(--mute); }
   .hero-text { padding-block: 32px 10px; }
   .hero-text p { font-size: 18.5px; }
   .ctas .btn { flex: 1 1 100%; justify-content: space-between; }
-  .plates { grid-template-columns: 1fr; }
+  .plates { grid-template-columns: minmax(0, 1fr); }
   .plates .plate { grid-column: span 1 !important; }
   .sched thead { display: none; }
   .sched, .sched tbody, .sched tr, .sched td { display: block; width: 100% !important; }
