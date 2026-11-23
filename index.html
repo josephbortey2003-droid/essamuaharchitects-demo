@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Albert Essamuah Associates | Architects, Accra · Tropical modern homes &amp; buildings</title>
+<meta name="description" content="Albert Essamuah Associates, architects in Accra. Registered with the Architects Registration Council of Ghana (Firm No. 059). Tropical modern homes and buildings designed for shade, natural ventilation and green space. Start a project on WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Libre+Franklin:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap">
+<style>
+/* Albert Essamuah Associates — brand from THEIR building: butterfly roof with teal edge and timber soffit,
+   vermilion façade panels, laterite stone, white render, fan palms, terracotta paving.
+   Unique style: ARCHITECTURAL MONOGRAPH / drawing set — title block in the hero, numbered plates, drafting grid,
+   dimension lines, a self-drawing roof section. Space Grotesk + Libre Franklin + Space Mono (all new). */
+:root {
+  --paper: #f6f3ec; --white: #fffdf9; --ink: #1c1c1a; --mute: #555149; --verm: #d4421b; --verm-d: #a9310f;
+  --teal: #2a9d97; --timber: #9a5a2c; --stone: #b08a63; --green: #2f4a32; --line: #d8d1c3; --grid: rgba(28,28,26,.05);
+  --head: "Space Grotesk", "Segoe UI", system-ui, sans-serif; --body: "Libre Franklin", "Segoe UI", system-ui, sans-serif; --mono: "Space Mono", ui-monospace, monospace;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+html, body { overflow-x: clip; }
+body { margin: 0; color: var(--ink); font: 400 18px/1.7 var(--body);
+  background: var(--paper);
+  background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 32px 32px; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--verm); outline-offset: 3px; }
+.wrap { max-width: 1240px; margin: 0 auto; padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
+h1, h2, h3 { font-family: var(--head); font-weight: 600; margin: 0; letter-spacing: -.03em; line-height: 1.02; }
+.mono { font: 400 13px/1.4 var(--mono); letter-spacing: .06em; text-transform: uppercase; }
+.v { color: var(--verm); }
+.demo { background: var(--ink); color: #d8d3c8; font-size: 13px; text-align: center; padding: 7px 12px; }
+
+.btn { display: inline-flex; align-items: center; gap: 14px; font: 600 16px/1 var(--head); padding: 18px 22px; background: var(--verm); color: #fff; text-decoration: none; border: 0; cursor: pointer; transition: background .2s, gap .2s; }
+.btn::after { content: ""; width: 26px; height: 2px; background: currentColor; box-shadow: 4px 0 0 0 transparent; position: relative; }
+.btn:hover { background: var(--verm-d); gap: 20px; }
+.btn.ghost { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1.5px var(--ink); }
+.btn.ghost:hover { background: var(--ink); color: #fff; }
+
+header.top { position: sticky; top: 0; z-index: 40; background: rgba(246,243,236,.96); border-bottom: 1.5px solid var(--ink); }
+header.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 12px; }
+.logo { text-decoration: none; display: flex; align-items: center; gap: 12px; }
+.logo svg { width: 46px; height: 26px; flex: none; }
+.logo b { display: block; font: 600 19px/1 var(--head); letter-spacing: -.01em; }
+.logo small { display: block; font: 400 11px/1 var(--mono); letter-spacing: .14em; color: var(--mute); margin-top: 4px; }
+.top nav { display: flex; align-items: center; gap: 28px; font: 500 15.5px/1 var(--head); }
+.top nav a { text-decoration: none; }
+.top nav a:not(.btn):hover { color: var(--verm); }
+.top nav .btn { padding: 13px 16px; font-size: 15px; }
+.menu-btn { display: none; background: none; border: 1.5px solid var(--ink); color: var(--ink); padding: 11px 13px; font: 400 12.5px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; cursor: pointer; align-items: center; gap: 9px; }
+.menu-btn i { display: grid; gap: 4px; } .menu-btn i b { display: block; width: 16px; height: 1.5px; background: var(--ink); }
+.drop { display: none; position: fixed; left: 0; right: 0; z-index: 45; background: var(--white); border-bottom: 3px solid var(--verm); box-shadow: 0 22px 40px rgba(0,0,0,.18); }
+.drop.open { display: block; }
+.drop a { display: flex; justify-content: space-between; align-items: baseline; padding: 15px 22px; font: 600 22px/1 var(--head); text-decoration: none; border-top: 1px solid var(--line); }
+.drop a span { font: 400 12px/1 var(--mono); color: var(--mute); }
+.scrim { display: none; position: fixed; inset: 0; z-index: 35; background: rgba(0,0,0,.4); }
+.scrim.open { display: block; }
+
+/* hero: photo + drawing title block */
+.hero { padding-top: 26px; }
+.sheet { position: relative; border: 1.5px solid var(--ink); background: var(--white); padding: 10px; }
+.sheet .ph { position: relative; aspect-ratio: 16 / 8.6; overflow: hidden; }
+.sheet .ph img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; }
+.titleblock { position: absolute; right: 26px; bottom: 26px; width: min(470px, calc(100% - 52px)); background: var(--white); border: 1.5px solid var(--ink); display: grid; grid-template-columns: 1fr 1fr; }
+.titleblock > div { padding: 10px 14px; border-bottom: 1px solid var(--ink); }
+.titleblock > div:nth-child(odd):not(.full) { border-right: 1px solid var(--ink); }
+.titleblock .full { grid-column: 1 / -1; }
+.titleblock .k { font: 400 10.5px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--mute); display: block; margin-bottom: 6px; }
+.titleblock .val { font: 600 16px/1.25 var(--head); }
+.titleblock h1 { font-size: clamp(30px, 3.4vw, 44px); padding: 4px 0 2px; }
+.titleblock .last { border-bottom: 0; }
+.hero-text { display: grid; grid-template-columns: 1.1fr .9fr; gap: 50px; align-items: end; padding-block: 46px 30px; }
+.hero-text p { font-size: 21px; color: var(--mute); margin: 0; max-width: 52ch; }
+.ctas { display: flex; gap: 12px; flex-wrap: wrap; justify-content: flex-end; }
+
+/* roof section drawing */
+.section-draw { padding-block: 40px 10px; }
+.section-draw svg { width: 100%; height: auto; display: block; }
+.section-draw .stroke { fill: none; stroke: var(--ink); stroke-width: 2; stroke-dasharray: 1600; stroke-dashoffset: 1600; transition: stroke-dashoffset 2.6s ease; }
+.section-draw .roof { stroke: var(--teal); stroke-width: 4; }
+.section-draw .accent { stroke: var(--verm); stroke-width: 3; }
+.section-draw .dim { stroke: var(--mute); stroke-width: 1; stroke-dasharray: 4 4; }
+.section-draw.in .stroke { stroke-dashoffset: 0; }
+.section-draw text { font: 400 12px var(--mono); fill: var(--mute); letter-spacing: .08em; }
+.section-draw .sun { fill: none; stroke: var(--verm); stroke-width: 1.5; }
+.section-draw .wind { fill: none; stroke: var(--teal); stroke-width: 1.6; stroke-dasharray: 6 6; animation: flow 2s linear infinite; }
+@keyframes flow { to { stroke-dashoffset: -24; } }
+
+/* principles */
+section { padding-block: 90px; }
+.sh { display: grid; grid-template-columns: 220px 1fr; gap: 30px; align-items: start; margin-bottom: 44px; border-top: 1.5px solid var(--ink); padding-top: 18px; }
+.sh .mono { color: var(--verm); padding-top: 10px; }
+.sh h2 { font-size: clamp(38px, 5vw, 64px); }
+.sh p { color: var(--mute); font-size: 19px; margin: 16px 0 0; max-width: 60ch; }
+.principles { display: grid; grid-template-columns: repeat(3, 1fr); border: 1.5px solid var(--ink); background: var(--white); }
+.pr { padding: 30px 28px; border-right: 1px solid var(--line); }
+.pr:last-child { border-right: 0; }
+.pr svg { width: 100%; height: 110px; margin-bottom: 18px; }
+.pr h3 { font-size: 26px; display: flex; gap: 12px; align-items: baseline; }
+.pr h3 .mono { color: var(--verm); }
+.pr p { color: var(--mute); margin: 10px 0 0; font-size: 17px; }
+.quote-strip { margin-top: 24px; display: flex; gap: 18px; align-items: baseline; font: 500 22px/1.4 var(--head); letter-spacing: -.01em; }
+.quote-strip .mono { color: var(--mute); flex: none; }
+
+/* plates */
+.plates { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
+.plate { margin: 0; background: var(--white); border: 1px solid var(--ink); padding: 8px 8px 0; display: flex; flex-direction: column; }
+.plate img { width: 100%; height: 100%; object-fit: cover; }
+.plate .im { overflow: hidden; flex: 1 1 auto; min-height: 0; }
+.plate figcaption { display: flex; justify-content: space-between; gap: 12px; padding: 10px 2px; font: 400 12.5px/1.35 var(--mono); letter-spacing: .04em; color: var(--mute); }
+.plate figcaption b { color: var(--ink); font-weight: 700; }
+.p-a { grid-column: span 7; } .p-a .im { min-height: 300px; }
+.p-b { grid-column: span 5; } .p-b .im { aspect-ratio: 3 / 4; }
+.p-c { grid-column: span 4; } .p-c .im { aspect-ratio: 1 / 1; }
+.p-d { grid-column: span 4; } .p-d .im { aspect-ratio: 1 / 1; }
+.p-e { grid-column: span 4; } .p-e .im { aspect-ratio: 1 / 1; }
+.p-f { grid-column: span 5; } .p-f .im { min-height: 260px; }
+.p-g { grid-column: span 7; } .p-g .im { aspect-ratio: 16 / 9.4; }
+
+/* services as a drawing schedule */
+.sched { width: 100%; border-collapse: collapse; background: var(--white); border: 1.5px solid var(--ink); }
+.sched th, .sched td { text-align: left; padding: 16px 18px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.sched th { font: 400 12px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--mute); background: var(--paper); border-bottom: 1.5px solid var(--ink); }
+.sched td:first-child { font: 700 14px/1.5 var(--mono); color: var(--verm); width: 90px; }
+.sched td:nth-child(2) { font: 600 21px/1.3 var(--head); width: 34%; }
+.sched td:last-child { color: var(--mute); }
+.sched tr:last-child td { border-bottom: 0; }
+
+/* practice */
+.practice { background: var(--ink); color: #e6e1d6; background-image: none; }
+.practice .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.practice h2 { color: #fff; font-size: clamp(38px, 4.6vw, 58px); margin: 14px 0 18px; }
+.practice .mono { color: #f08b6a; }
+.practice p { color: #c8c2b6; }
+.reg { border: 1.5px solid #fff; display: grid; grid-template-columns: 1fr 1fr; margin-top: 26px; }
+.reg div { padding: 14px 16px; border-bottom: 1px solid rgba(255,255,255,.3); }
+.reg div:nth-child(odd) { border-right: 1px solid rgba(255,255,255,.3); }
+.reg div:nth-last-child(-n+2) { border-bottom: 0; }
+.reg .k { display: block; font: 400 10.5px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: #a8a297; margin-bottom: 6px; }
+.reg .val { font: 600 17px/1.3 var(--head); color: #fff; }
+.practice figure { margin: 0; border: 1.5px solid #fff; padding: 8px; }
+.practice figure img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.practice figure figcaption { font: 400 12px/1.4 var(--mono); color: #a8a297; padding-top: 8px; letter-spacing: .04em; }
+
+/* brief form */
+.brief { display: grid; grid-template-columns: .9fr 1.1fr; gap: 46px; align-items: start; }
+.brief .steps { list-style: none; padding: 0; margin: 22px 0 0; display: grid; gap: 0; border-top: 1px solid var(--line); }
+.brief .steps li { display: grid; grid-template-columns: 54px 1fr; gap: 10px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.brief .steps .mono { color: var(--verm); padding-top: 4px; }
+.brief .steps b { font: 600 18px/1.3 var(--head); display: block; }
+.brief .steps span { color: var(--mute); font-size: 16.5px; }
+form.card { background: var(--white); border: 1.5px solid var(--ink); padding: 30px; }
+form.card .hd { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1.5px solid var(--ink); padding-bottom: 12px; margin-bottom: 20px; }
+form.card .hd b { font: 600 22px/1 var(--head); }
+form.card .hd .mono { color: var(--mute); }
+fieldset { border: 0; padding: 0; margin: 0 0 18px; }
+legend { font: 400 12px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--mute); margin-bottom: 10px; }
+.opts { display: flex; flex-wrap: wrap; gap: 8px; }
+.opts label { position: relative; }
+.opts input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
+.opts span { display: inline-block; padding: 11px 14px; border: 1.5px solid #bdb5a5; font: 500 15.5px/1 var(--head); background: var(--paper); }
+.opts input:checked + span { background: var(--ink); color: #fff; border-color: var(--ink); }
+.opts input:focus-visible + span { outline: 3px solid var(--verm); outline-offset: 2px; }
+.f { display: grid; gap: 7px; font: 400 12px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--mute); margin-bottom: 16px; }
+.f input, .f select { font: 400 17px/1.4 var(--body); text-transform: none; letter-spacing: 0; padding: 13px; border: 1.5px solid #bdb5a5; background: var(--paper); color: var(--ink); width: 100%; border-radius: 0; }
+.f input:focus, .f select:focus { outline: 2px solid var(--verm); border-color: var(--verm); }
+.row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+.revs { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1.5px solid var(--ink); background: var(--white); margin-top: 60px; }
+.rev { margin: 0; padding: 28px; }
+.rev + .rev { border-left: 1px solid var(--line); }
+.rev p { font: 500 24px/1.35 var(--head); letter-spacing: -.015em; margin: 0 0 14px; }
+.rev cite { font: 400 12.5px/1 var(--mono); font-style: normal; color: var(--verm); letter-spacing: .08em; }
+
+.map { border: 1.5px solid var(--ink); background: var(--white); padding: 8px; margin-top: 26px; }
+.map iframe { width: 100%; height: 340px; border: 0; display: block; filter: grayscale(.6) contrast(1.05); }
+footer { border-top: 1.5px solid var(--ink); padding-block: 34px 104px; background: var(--white); }
+footer .wrap { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; align-items: baseline; }
+footer b { font: 600 22px/1 var(--head); }
+footer .mono { color: var(--mute); }
+.dock { position: fixed; left: 0; right: 0; bottom: 0; z-index: 30; display: none; background: var(--white); border-top: 1.5px solid var(--ink); padding-bottom: env(safe-area-inset-bottom, 0px); }
+.dock a { flex: 1; text-align: center; padding: 17px 10px; text-decoration: none; font: 600 16px/1 var(--head); }
+.dock a + a { background: var(--verm); color: #fff; }
+.rv { opacity: 0; transform: translateY(16px); transition: opacity .7s ease, transform .7s ease; }
+.rv.in { opacity: 1; transform: none; }
+
+@media (max-width: 1000px) {
+  .top nav { display: none; } .menu-btn { display: inline-flex; }
+  .hero-text, .practice .wrap, .brief { grid-template-columns: 1fr; }
+  .ctas { justify-content: flex-start; }
+  .sh { grid-template-columns: 1fr; gap: 6px; }
+  .principles { grid-template-columns: 1fr; }
+  .pr { border-right: 0; border-bottom: 1px solid var(--line); } .pr:last-child { border-bottom: 0; }
+  .plates { grid-template-columns: 1fr 1fr; }
+  .plates .plate { grid-column: span 1; } .plates .p-a, .plates .p-g { grid-column: span 2; }
+  .plate .im { aspect-ratio: 4 / 3 !important; }
+}
+@media (max-width: 640px) {
+  section { padding-block: 64px; }
+  .sheet .ph { aspect-ratio: 4 / 3.4; }
+  .titleblock { position: static; width: 100%; margin-top: 10px; }
+  .hero-text { padding-block: 32px 10px; }
+  .hero-text p { font-size: 18.5px; }
+  .ctas .btn { flex: 1 1 100%; justify-content: space-between; }
+  .plates { grid-template-columns: 1fr; }
+  .plates .plate { grid-column: span 1 !important; }
+  .sched thead { display: none; }
+  .sched, .sched tbody, .sched tr, .sched td { display: block; width: 100% !important; }
+  .sched tr { border-bottom: 1px solid var(--line); padding: 14px 16px; }
+  .sched td { border: 0; padding: 2px 0; }
+  .revs { grid-template-columns: 1fr; } .rev + .rev { border-left: 0; border-top: 1px solid var(--line); }
+  .reg { grid-template-columns: 1fr; } .reg div { border-right: 0 !important; border-bottom: 1px solid rgba(255,255,255,.3) !important; } .reg div:last-child { border-bottom: 0 !important; }
+  .row2 { grid-template-columns: 1fr; gap: 0; }
+  form.card { padding: 22px 18px; }
+  .dock { display: flex; }
+  .logo b { font-size: 16.5px; } .logo small { font-size: 10px; }
+  .quote-strip { flex-direction: column; gap: 6px; font-size: 19px; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } .rv { opacity: 1; transform: none; } .section-draw .stroke { stroke-dashoffset: 0; } html { scroll-behavior: auto; } }
+</style>
+<style>body{margin:0}</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="mark" viewBox="0 0 46 26"><path d="M2 6 L23 16 L44 2" fill="none" stroke="#2a9d97" stroke-width="3"/><rect x="8" y="14" width="10" height="11" fill="#d4421b"/><path d="M20 25V16h16v9" fill="none" stroke="#1c1c1a" stroke-width="2"/></symbol>
+</defs></svg>
+
+<div class="demo">Demo website made for Albert Essamuah Associates. Project details and captions to be confirmed by you.</div>
+
+<header class="top"><div class="wrap">
+  <a class="logo" href="#top" aria-label="Albert Essamuah Associates home"><svg aria-hidden="true"><use href="#mark"/></svg><span><b>Albert Essamuah Associates</b><small>ARCHITECTS · ACCRA</small></span></a>
+  <nav aria-label="Primary"><a href="#approach">Approach</a><a href="#work">Work</a><a href="#services">Services</a><a href="#practice">Practice</a><a class="btn" href="#brief">Start a project</a></nav>
+  <button class="menu-btn" type="button" id="menuBtn" aria-expanded="false" aria-controls="drop"><i><b></b><b></b><b></b></i>Menu</button>
+</div></header>
+<div class="scrim" id="scrim"></div>
+<nav class="drop" id="drop" aria-label="Menu"><a href="#approach">Approach <span>01</span></a><a href="#work">Work <span>02</span></a><a href="#services">Services <span>03</span></a><a href="#practice">Practice <span>04</span></a><a href="#brief">Start a project <span>05</span></a></nav>
+
+<div class="hero" id="top"><div class="wrap">
+  <div class="sheet rv">
+    <div class="ph"><img src="img/hero.webp" alt="A tropical modern house with a sweeping butterfly roof, vermilion panels, stone walls, a palm and a terracotta-tiled path" width="1900" height="1276"></div>
+    <div class="titleblock" role="group" aria-label="Drawing title block">
+      <div class="full"><span class="k">Practice</span><h1>Architecture for the <span class="v">tropics.</span></h1></div>
+      <div><span class="k">Location</span><span class="val">Accra, Ghana</span></div>
+      <div><span class="k">ARC Firm No.</span><span class="val">059</span></div>
+      <div class="last"><span class="k">Principles</span><span class="val">Shade · Breeze · Green</span></div>
+      <div class="last"><span class="k">Sheet</span><span class="val">A-001</span></div>
+    </div>
+  </div>
+  <div class="hero-text">
+    <p class="rv">We design homes and buildings that stay cool, breathe and live with their gardens: deep roofs for shade, open plans for the breeze, and courtyards full of green.</p>
+    <div class="ctas rv"><a class="btn" href="#brief">Start a project</a><a class="btn ghost" href="#work">See the work</a></div>
+  </div>
+</div></div>
+
+<div class="section-draw wrap" id="draw" aria-hidden="true">
+  <svg viewBox="0 0 1200 260" preserveAspectRatio="xMidYMid meet">
+    <path class="stroke dim" d="M60 240 H1140"/>
+    <path class="stroke roof" d="M140 40 L600 120 L1080 20"/>
+    <path class="stroke" d="M240 236 V128 M240 128 H560 M560 236 V128 M640 236 V120 M640 120 H960 M960 236 V108"/>
+    <path class="stroke accent" d="M240 236 V160 H330 V236 M860 236 V150 H960"/>
+    <path class="stroke" d="M380 236 V180 H500 V236 M690 236 V170 H800 V236"/>
+    <path class="sun" d="M90 70 l-30 -30 M100 62 l-14 -40 M78 82 l-40 -14"/>
+    <circle class="sun" cx="104" cy="86" r="14"/>
+    <path class="wind" d="M180 200 C 320 190, 420 210, 560 196 S 860 190, 1100 204"/>
+    <text x="60" y="232">GL ±0.00</text><text x="1000" y="16">ROOF OVERHANG</text><text x="190" y="190">CROSS-VENTILATION →</text>
+  </svg>
+</div>
+
+<section id="approach"><div class="wrap">
+  <div class="sh rv"><span class="mono">01 / Approach</span><div><h2>Shade, breeze <span class="v">and green.</span></h2><p>Accra is hot and humid most of the year. Good architecture here works with the climate instead of fighting it, so buildings are comfortable and cheaper to run.</p></div></div>
+  <div class="principles rv">
+    <div class="pr"><svg viewBox="0 0 220 110" aria-hidden="true"><path d="M20 40 L110 70 L200 30" fill="none" stroke="#2a9d97" stroke-width="4"/><path d="M60 100 V58 M160 100 V48" stroke="#1c1c1a" stroke-width="2"/><circle cx="196" cy="12" r="8" fill="none" stroke="#d4421b" stroke-width="2"/><path d="M188 20 L150 70 M180 16 L120 76" stroke="#d4421b" stroke-width="1.2" stroke-dasharray="4 4"/><path d="M10 100 H210" stroke="#555149" stroke-width="1"/></svg><h3><span class="mono">A.1</span>Deep shade</h3><p>Generous roofs and overhangs keep the sun off walls and windows, so rooms stay cool.</p></div>
+    <div class="pr"><svg viewBox="0 0 220 110" aria-hidden="true"><rect x="40" y="30" width="140" height="70" fill="none" stroke="#1c1c1a" stroke-width="2"/><path d="M10 64 C 60 56, 110 74, 210 62" fill="none" stroke="#2a9d97" stroke-width="2" stroke-dasharray="6 6" class="windline"/><path d="M200 56 l10 6 l-10 6" fill="none" stroke="#2a9d97" stroke-width="2"/><path d="M40 52 v24 M180 52 v24" stroke="#fffdf9" stroke-width="4"/><path d="M10 100 H210" stroke="#555149" stroke-width="1"/></svg><h3><span class="mono">A.2</span>Natural breeze</h3><p>Openings placed for cross-ventilation let air flow through, so you rely less on air conditioning.</p></div>
+    <div class="pr"><svg viewBox="0 0 220 110" aria-hidden="true"><path d="M60 100 V52 H160 V100" fill="none" stroke="#1c1c1a" stroke-width="2"/><path d="M30 100 C 26 74, 36 66, 30 50 M30 64 C 18 58, 14 50, 18 42 M30 64 C 42 56, 46 48, 42 40" fill="none" stroke="#2f4a32" stroke-width="2.4"/><path d="M190 100 C 194 80, 186 70, 192 56 M192 70 C 204 62, 206 54, 202 48" fill="none" stroke="#2f4a32" stroke-width="2.4"/><path d="M10 100 H210" stroke="#555149" stroke-width="1"/></svg><h3><span class="mono">A.3</span>Living green</h3><p>Courtyards, palms and planting bring life, privacy and cooler air right up to the house.</p></div>
+  </div>
+  <div class="quote-strip rv"><span class="mono">Client note:</span><span>"Well shaded. Natural ventilation. A lot of green… I love it."</span></div>
+</div></section>
+
+<section id="work" style="padding-top:20px"><div class="wrap">
+  <div class="sh rv"><span class="mono">02 / Work</span><div><h2>Selected <span class="v">plates.</span></h2><p>Butterfly roofs, stone, timber and colour, set in gardens designed with the building.</p></div></div>
+  <div class="plates">
+    <figure class="plate p-a rv"><div class="im"><img src="img/pool.webp" alt="Pool terrace with fan palms beside a modern house with stone walls" loading="lazy"></div><figcaption><span><b>PL.01</b> Pool terrace and fan palms</span><span>Residential</span></figcaption></figure>
+    <figure class="plate p-b rv"><div class="im"><img src="img/path.webp" alt="Garden path of terracotta pavers leading past lush planting to the house" loading="lazy"></div><figcaption><span><b>PL.02</b> Garden approach</span><span>Landscape</span></figcaption></figure>
+    <figure class="plate p-c rv"><div class="im"><img src="img/pergola.webp" alt="Courtyard pergola with a water feature, sculpture and stepping stones" loading="lazy"></div><figcaption><span><b>PL.03</b> Courtyard pergola</span><span>Outdoor</span></figcaption></figure>
+    <figure class="plate p-d rv"><div class="im"><img src="img/lounge.webp" alt="Bright lounge with tall windows, red sofas and indoor plants" loading="lazy"></div><figcaption><span><b>PL.04</b> Light-filled lounge</span><span>Interior</span></figcaption></figure>
+    <figure class="plate p-e rv"><div class="im"><img src="img/pots.webp" alt="Clay pot sculpture on the lawn with the house lit at dusk" loading="lazy"></div><figcaption><span><b>PL.05</b> Clay pot sculpture</span><span>Garden art</span></figcaption></figure>
+    <figure class="plate p-f rv"><div class="im"><img src="img/terrace.webp" alt="Shaded terrace with umbrella, kente-patterned seating and flowers" loading="lazy"></div><figcaption><span><b>PL.06</b> Shaded terrace</span><span>Outdoor living</span></figcaption></figure>
+    <figure class="plate p-g rv"><div class="im"><img src="img/night.webp" alt="The house and its garden lit at night" loading="lazy"></div><figcaption><span><b>PL.07</b> Evening view</span><span>Lighting</span></figcaption></figure>
+  </div>
+</div></section>
+
+<section id="services" style="padding-top:20px"><div class="wrap">
+  <div class="sh rv"><span class="mono">03 / Services</span><div><h2>From sketch <span class="v">to site.</span></h2></div></div>
+  <table class="sched rv">
+    <thead><tr><th>Ref.</th><th>Service</th><th>What it covers</th></tr></thead>
+    <tbody>
+      <tr><td>S-01</td><td>Architectural design</td><td>Concept, layouts and full drawings for homes, offices and commercial buildings.</td></tr>
+      <tr><td>S-02</td><td>Permit drawings</td><td>Drawing sets prepared for building permit applications.</td></tr>
+      <tr><td>S-03</td><td>Interiors</td><td>Space planning, finishes and lighting that match the architecture.</td></tr>
+      <tr><td>S-04</td><td>Landscape &amp; courtyards</td><td>Gardens, terraces, water features and outdoor rooms designed with the building.</td></tr>
+      <tr><td>S-05</td><td>Supervision</td><td>Site visits and checks so the building is built as designed.</td></tr>
+    </tbody>
+  </table>
+</div></section>
+
+<section class="practice" id="practice"><div class="wrap">
+  <div class="rv">
+    <span class="mono">04 / Practice</span>
+    <h2>A registered practice you can trust.</h2>
+    <p>Albert Essamuah Associates is listed by the Architects Registration Council of Ghana among the architecture firms in good standing, every year since at least 2019.</p>
+    <div class="reg">
+      <div><span class="k">Registered with</span><span class="val">Architects Registration Council, Ghana</span></div>
+      <div><span class="k">Firm No.</span><span class="val">059</span></div>
+      <div><span class="k">Architects</span><span class="val">Albert W. S. Essamuah</span></div>
+      <div><span class="k">Architects</span><span class="val">Margaret Essamuah</span></div>
+    </div>
+  </div>
+  <figure class="rv"><img src="img/library.webp" alt="Studio interior with bookshelves, orange sofa and African masks on a purple wall" loading="lazy"><figcaption>PL.08 · Interior with library and art</figcaption></figure>
+</div></section>
+
+<section id="brief"><div class="wrap">
+  <div class="sh rv"><span class="mono">05 / Start a project</span><div><h2>Tell us about <span class="v">your project.</span></h2></div></div>
+  <div class="brief">
+    <div class="rv">
+      <p style="color:var(--mute);font-size:19px;margin:0">Send a short brief and we'll arrange a first conversation, at our office or on your site.</p>
+      <ol class="steps">
+        <li><span class="mono">01</span><div><b>Brief</b><span>You share the idea, the land and your budget range.</span></div></li>
+        <li><span class="mono">02</span><div><b>Site &amp; concept</b><span>We visit, study the plot and sketch the first concept.</span></div></li>
+        <li><span class="mono">03</span><div><b>Design &amp; drawings</b><span>Full design, permit drawings and details.</span></div></li>
+        <li><span class="mono">04</span><div><b>Build</b><span>We stay involved on site until handover.</span></div></li>
+      </ol>
+    </div>
+    <form class="card rv" id="form">
+      <div class="hd"><b>Project brief</b><span class="mono">Form B-01</span></div>
+      <fieldset><legend>Project type</legend><div class="opts">
+        <label><input type="radio" name="type" value="New home" checked><span>New home</span></label>
+        <label><input type="radio" name="type" value="Office / commercial"><span>Office / commercial</span></label>
+        <label><input type="radio" name="type" value="Renovation / extension"><span>Renovation</span></label>
+        <label><input type="radio" name="type" value="Interior"><span>Interior</span></label>
+      </div></fieldset>
+      <fieldset><legend>Where are you now?</legend><div class="opts">
+        <label><input type="radio" name="stage" value="Just an idea" checked><span>Just an idea</span></label>
+        <label><input type="radio" name="stage" value="I have land"><span>I have land</span></label>
+        <label><input type="radio" name="stage" value="I have drawings"><span>I have drawings</span></label>
+      </div></fieldset>
+      <div class="row2">
+        <label class="f">Location of site<input name="loc" placeholder="e.g. East Legon, Aburi" required></label>
+        <label class="f">When to start<select name="when"><option>Within 3 months</option><option>3 – 6 months</option><option>6 – 12 months</option><option>Just exploring</option></select></label>
+      </div>
+      <label class="f">Your name<input name="name" autocomplete="name" required></label>
+      <button class="btn" type="submit" style="width:100%;justify-content:space-between">Send brief on WhatsApp</button>
+    </form>
+  </div>
+  <div class="revs">
+    <figure class="rev rv"><p>"Excellent architectural designs and implementation."</p><cite>GOOGLE REVIEW ★★★★★</cite></figure>
+    <figure class="rev rv"><p>"Well shaded. Natural ventilation. A lot of green… I love it."</p><cite>GOOGLE REVIEW ★★★★★</cite></figure>
+  </div>
+  <div class="map rv"><iframe title="Map: Albert Essamuah Associates, Accra" src="https://www.google.com/maps?q=Albert+Essamuah+Associates,+Accra&ll=5.6325982,-0.2211248&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+</div></section>
+
+<footer><div class="wrap">
+  <b>Albert Essamuah Associates</b>
+  <span class="mono">Architects · Accra · <a href="tel:+233244625103">024 462 5103</a> · ARC Firm No. 059</span>
+</div></footer>
+<div class="dock"><a href="tel:+233244625103">Call</a><a href="#brief">Start a project</a></div>
+
+<script>
+(() => {
+  const WA = '233244625103';
+  const io = 'IntersectionObserver' in window ? new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .08 }) : null;
+  document.querySelectorAll('.rv, #draw').forEach(el => io ? io.observe(el) : el.classList.add('in'));
+  const btn = document.getElementById('menuBtn'), drop = document.getElementById('drop'), scrim = document.getElementById('scrim'), head = document.querySelector('header.top');
+  const close = () => { drop.classList.remove('open'); scrim.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); };
+  btn.onclick = () => { const o = !drop.classList.contains('open'); drop.style.top = head.getBoundingClientRect().bottom + 'px'; drop.classList.toggle('open', o); scrim.classList.toggle('open', o); btn.setAttribute('aria-expanded', o); };
+  scrim.onclick = close; drop.querySelectorAll('a').forEach(a => a.onclick = close);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+  const f = document.getElementById('form');
+  f.addEventListener('submit', e => {
+    e.preventDefault();
+    const m = 'Hello Albert Essamuah Associates! I would like to discuss a project.\n\nProject: ' + f.type.value + '\nStage: ' + f.stage.value + '\nSite location: ' + f.loc.value + '\nStart: ' + f.when.value + '\nName: ' + f.name.value + '\n\nThank you!';
+    window.open('https://wa.me/' + WA + '?text=' + encodeURIComponent(m), '_blank', 'noopener');
+  });
+})();
+</script>
+
+<!-- jb-credit -->
+<div class="jb-credit" style="all:revert;display:block;margin:0;padding:14px 16px calc(14px + env(safe-area-inset-bottom,0px));background:#111;color:#cfcfcf;font:500 13px/1.5 system-ui,-apple-system,Segoe UI,Arial,sans-serif;text-align:center;position:relative;z-index:1">Website designed by <b style="color:#fff">Joseph Bortey</b> · <a href="tel:+233265768743" style="color:#fff;text-decoration:underline">026 576 8743</a></div>
+<style>@media (max-width:760px){.jb-credit{padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))!important}}</style>
+<img src="https://hits.sh/josephbortey2003-droid.github.io/essamuaharchitects-demo.svg" alt="" width="1" height="1" style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none" referrerpolicy="no-referrer" loading="eager">
+</body>
+</html>
